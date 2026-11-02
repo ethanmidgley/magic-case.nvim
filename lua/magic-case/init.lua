@@ -32,6 +32,10 @@ local function enable(delim)
 end
 
 function M.start()
+	if M.active then
+		disable()
+	end
+
 	M.active = true
 
 	delim = vim.fn.getcharstr()
