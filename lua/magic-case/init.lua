@@ -25,9 +25,8 @@ local function enable(delim)
 
 	vim.api.nvim_create_autocmd("InsertLeave", {
 		once = true,
-		callback = function()
-			disable()
-		end,
+		group = augroup,
+		callback = disable,
 	})
 end
 
